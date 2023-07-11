@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { OverviewComponent } from './shopping-list/overview/overview.component';
 import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
+import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavigationComponent,
-    OverviewComponent,
     RecipesListComponent,
+    RecipeDetailComponent,
+    ShoppingListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
