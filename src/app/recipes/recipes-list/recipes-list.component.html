@@ -1,8 +1,14 @@
 <ul class="list-group">
-  <li class="list-group-item">
-    <a href="#" class="text-decoration-none stretched-link">First item</a>
-  </li>
-  <li class="list-group-item">
-    <a href="#" class="text-decoration-none stretched-link">second item</a>
+  <li
+    *ngFor="let recipe of recipes"
+    class="list-group-item d-flex justify-content-between"
+  >
+    <a
+      href="#"
+      class="list-group-item-heading text-decoration-none stretched-link"
+      >{{ recipe.name }}</a
+    >
+    <span class="list-group-item-text">{{ recipe.description }}</span>
+    <img class="w-25 img-thumbnail" [src]="recipe.imageUrl" alt="" />
   </li>
 </ul>
