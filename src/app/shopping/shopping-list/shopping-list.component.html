@@ -1,24 +1,20 @@
 <ul class="list-group">
-  <li class="list-group-item d-flex justify-content-between">
-    <label class="form-check-label stretched-link" for="firstCheckboxStretched"
-      >First ingredient</label
-    >
+  <li
+    *ngFor="let ingredient of ingredients; let i = index"
+    class="list-group-item container"
+  >
     <input
-      class="form-check-input me-1"
+      class="form-check-input me-2"
       type="checkbox"
       value=""
-      id="firstCheckboxStretched"
+      id="{{ i }}CheckboxStretched"
     />
-  </li>
-  <li class="list-group-item d-flex justify-content-between">
-    <label class="form-check-label stretched-link" for="secondCheckboxStretched"
-      >Second ingredient</label
+
+    <label
+      class="form-check-label stretched-link"
+      for="{{ i }}CheckboxStretched"
+      >{{ ingredient.amount }} {{ ingredient.unit }} of
+      {{ ingredient.name }}</label
     >
-    <input
-      class="form-check-input me-1"
-      type="checkbox"
-      value=""
-      id="secondCheckboxStretched"
-    />
   </li>
 </ul>
