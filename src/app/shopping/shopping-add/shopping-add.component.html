@@ -10,6 +10,7 @@
       class="form-control"
       aria-label="Enter new ingredient name"
       id="name"
+      #nameInput
     />
     <label class="input-group-text" for="amount">Amount</label>
     <input
@@ -17,6 +18,7 @@
       class="form-control"
       aria-label="Enter amount needed"
       id="amount"
+      #amountInput
     />
     <label class="input-group-text" for="unit">Unit</label>
     <input
@@ -24,7 +26,14 @@
       class="form-control"
       aria-label="Enter unit of amount"
       id="unit"
+      #unitInput
     />
-    <button class="btn btn-primary" type="submit">+ Add</button>
+    <button
+      class="btn btn-primary"
+      type="button"
+      (click)="handleAddIngredient()"
+    >
+      + Add
+    </button>
   </div>
 </form>
