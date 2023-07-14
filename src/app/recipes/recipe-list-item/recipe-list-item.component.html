@@ -1,0 +1,14 @@
+<li class="list-group-item d-flex justify-content-between">
+  <h2 class="fs-4">
+    <a
+      routerLink="recipe-detail/{{ recipe.id }}"
+      class="list-group-item-heading text-decoration-none stretched-link"
+      >{{ recipe.name }}</a
+    >
+  </h2>
+  <img
+    class="w-25 img-thumbnail"
+    [src]="recipe.imageUrl"
+    alt="{{ recipe.name }}"
+  />
+</li>
