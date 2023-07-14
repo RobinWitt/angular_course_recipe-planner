@@ -1,4 +1,20 @@
-<ul class="list-group">
-  <app-recipe-list-item *ngFor="let recipe of recipes" [recipe]="recipe">
-  </app-recipe-list-item>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        <app-recipe-list-item
+          *ngFor="let recipe of recipes"
+          [recipe]="recipe"
+          (recipeSelected)="onRecipeSelected(recipe.id)"
+        >
+        </app-recipe-list-item>
+      </ul>
+    </div>
+    <div class="col">
+      <app-recipe-detail
+        *ngIf="selectedRecipe.id != ''"
+        [recipe]="selectedRecipe"
+      ></app-recipe-detail>
+    </div>
+  </div>
+</div>

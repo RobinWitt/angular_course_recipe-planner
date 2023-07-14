@@ -1,10 +1,13 @@
 <li class="list-group-item d-flex justify-content-between">
   <h2 class="fs-4">
-    <a
+    <!-- <a
       routerLink="recipe-detail/{{ recipe.id }}"
       class="list-group-item-heading text-decoration-none stretched-link"
       >{{ recipe.name }}</a
-    >
+    > -->
+    <button class="btn btn-outline-primary" (click)="onSelected(recipe.id)">
+      {{ recipe.name }}
+    </button>
   </h2>
   <img
     class="w-25 img-thumbnail"

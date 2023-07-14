@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import Recipe from '../recipe.model';
 
 @Component({
@@ -21,4 +21,17 @@ export class RecipesListComponent {
       'https://images.unsplash.com/photo-1675712843856-ba2cb7d33f3c'
     ),
   ];
+
+  selectedRecipe: Recipe = {
+    id: '',
+    name: '',
+    description: '',
+    imageUrl: '',
+  };
+
+  @Output() recipeWasSelected = new EventEmitter<string>();
+
+  onRecipeSelected(currentId: string) {
+    [this.selectedRecipe] = this.recipes.filter(({ id }) => id === currentId);
+  }
 }
