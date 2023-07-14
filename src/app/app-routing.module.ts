@@ -17,11 +17,11 @@ const routes: Routes = [
     path: 'recipe-detail',
     component: RecipeDetailComponent,
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'shopping-list',
-  //   pathMatch: 'full',
-  // },
+  {
+    path: '',
+    redirectTo: 'shopping-list',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
