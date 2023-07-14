@@ -10,11 +10,14 @@
         </app-recipe-list-item>
       </ul>
     </div>
-    <div class="col">
+    <div class="col text-center border-start">
       <app-recipe-detail
-        *ngIf="selectedRecipe.id != ''"
+        *ngIf="selectedRecipe.id != ''; else noSelectedRecipe"
         [recipe]="selectedRecipe"
       ></app-recipe-detail>
+      <ng-template #noSelectedRecipe>
+        <span class="text-body-tertiary">Select a recipe</span>
+      </ng-template>
     </div>
   </div>
 </div>
