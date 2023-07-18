@@ -1,14 +1,23 @@
-<ul class="list-group">
-  <li
-    *ngFor="let recipe of recipes"
-    class="list-group-item d-flex justify-content-between"
-  >
-    <a
-      href="#"
-      class="list-group-item-heading text-decoration-none stretched-link"
-      >{{ recipe.name }}</a
-    >
-    <span class="list-group-item-text">{{ recipe.description }}</span>
-    <img class="w-25 img-thumbnail" [src]="recipe.imageUrl" alt="" />
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        <app-recipe-list-item
+          *ngFor="let recipe of recipes"
+          [recipe]="recipe"
+          (recipeSelected)="onRecipeSelected(recipe.id)"
+        >
+        </app-recipe-list-item>
+      </ul>
+    </div>
+    <div class="col text-center border-start">
+      <app-recipe-detail
+        *ngIf="selectedRecipe.id != ''; else noSelectedRecipe"
+        [recipe]="selectedRecipe"
+      ></app-recipe-detail>
+      <ng-template #noSelectedRecipe>
+        <span class="text-body-tertiary">Select a recipe</span>
+      </ng-template>
+    </div>
+  </div>
+</div>

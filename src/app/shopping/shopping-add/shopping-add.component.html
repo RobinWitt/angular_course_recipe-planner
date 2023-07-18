@@ -1,0 +1,39 @@
+<form
+  class="container p-3 mb-2 rounded border"
+  aria-describedby="formDescription"
+>
+  <span class="form-text" id="formDescription">Enter new ingredient</span>
+  <div class="input-group mt-1">
+    <label class="input-group-text" for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Enter new ingredient name"
+      id="name"
+      #nameInput
+    />
+    <label class="input-group-text" for="amount">Amount</label>
+    <input
+      type="number"
+      class="form-control"
+      aria-label="Enter amount needed"
+      id="amount"
+      #amountInput
+    />
+    <label class="input-group-text" for="unit">Unit</label>
+    <input
+      type="text"
+      class="form-control"
+      aria-label="Enter unit of amount"
+      id="unit"
+      #unitInput
+    />
+    <button
+      class="btn btn-primary"
+      type="button"
+      (click)="handleAddIngredient()"
+    >
+      + Add
+    </button>
+  </div>
+</form>
