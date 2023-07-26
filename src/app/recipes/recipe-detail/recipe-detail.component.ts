@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
 import Recipe from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
@@ -14,5 +13,12 @@ export class RecipeDetailComponent {
     name: '',
     description: '',
     imageUrl: '',
+    ingredients: [],
   };
+
+  constructor(private recipeService: RecipeService) {}
+
+  onAddIngredientsToShoppingList(id: string) {
+    this.recipeService.addIngredientsToShoppingList(id);
+  }
 }

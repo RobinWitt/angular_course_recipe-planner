@@ -1,13 +1,11 @@
-export default class Recipe {
-  public id: string;
-  public name: string;
-  public description: string;
-  public imageUrl: string;
+import Ingredient from '../shared/ingredient.model';
 
-  constructor(id: string, name: string, desc: string, imageUrl: string) {
-    this.id = id;
-    this.name = name;
-    this.description = desc;
-    this.imageUrl = imageUrl;
-  }
+export default class Recipe {
+  constructor(
+    public id: string,
+    public name: string,
+    public description: string,
+    public imageUrl: string,
+    public ingredients: Ingredient[]
+  ) {}
 }

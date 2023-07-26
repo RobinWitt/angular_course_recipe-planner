@@ -1,7 +1,6 @@
 <div class="container-xs text-center">
   <div class="row">
     <div class="col">
-      <h2>Details</h2>
       <h3 class="fs-3">{{ selectedRecipe.name }}</h3>
       <img
         src="{{ selectedRecipe.imageUrl }}"
@@ -13,13 +12,24 @@
   </div>
   <div class="row">
     <div class="col">
-      <h3 class="fs-3">Ingredients</h3>
+      <div class="d-flex justify-content-evenly align-items-center">
+        <h3 class="fs-3">Ingredients</h3>
+        <button
+          (click)="onAddIngredientsToShoppingList(selectedRecipe.id)"
+          class="btn btn-sm btn-outline-primary"
+        >
+          Add to Shopping List
+        </button>
+      </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
+        <li
+          *ngFor="let ingredient of selectedRecipe.ingredients"
+          class="list-group-item"
+        >
+          <span>{{ ingredient.amount }} </span>
+          <span>{{ ingredient.unit }} </span>
+          <span>{{ ingredient.name }}</span>
+        </li>
       </ul>
     </div>
   </div>

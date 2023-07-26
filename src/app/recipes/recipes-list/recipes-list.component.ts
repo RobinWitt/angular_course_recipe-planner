@@ -9,6 +9,7 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipesListComponent implements OnInit {
   recipes: Recipe[] = [];
+  showPreview: boolean = false;
 
   constructor(private recipeService: RecipeService) {}
 
@@ -21,9 +22,15 @@ export class RecipesListComponent implements OnInit {
     name: '',
     description: '',
     imageUrl: '',
+    ingredients: [],
   };
 
   onPreviewRecipe(currentId: string) {
     this.selectedRecipe = this.recipeService.getOneRecipe(currentId);
+    this.showPreview = true;
+  }
+
+  onClosePreviewRecipe() {
+    this.showPreview = false;
   }
 }

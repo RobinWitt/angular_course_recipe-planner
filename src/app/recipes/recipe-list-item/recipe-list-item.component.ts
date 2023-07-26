@@ -12,6 +12,7 @@ export class RecipeListItemComponent {
     name: '',
     description: '',
     imageUrl: '',
+    ingredients: [],
   };
 
   @Output() recipeSelected = new EventEmitter<string>();

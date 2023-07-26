@@ -11,8 +11,12 @@
       </ul>
     </div>
     <div class="col text-center border-start">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Details</h2>
+        <button (click)="onClosePreviewRecipe()" class="btn btn-close"></button>
+      </div>
       <app-recipe-detail
-        *ngIf="selectedRecipe && selectedRecipe.id != ''; else noSelectedRecipe"
+        *ngIf="showPreview; else noSelectedRecipe"
         [selectedRecipe]="selectedRecipe"
       ></app-recipe-detail>
       <ng-template #noSelectedRecipe>
