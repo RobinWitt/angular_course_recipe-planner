@@ -5,15 +5,15 @@
         <app-recipe-list-item
           *ngFor="let recipe of recipes"
           [recipe]="recipe"
-          (recipeSelected)="onRecipeSelected(recipe.id)"
+          (recipeSelected)="onPreviewRecipe(recipe.id)"
         >
         </app-recipe-list-item>
       </ul>
     </div>
     <div class="col text-center border-start">
       <app-recipe-detail
-        *ngIf="selectedRecipe.id != ''; else noSelectedRecipe"
-        [recipe]="selectedRecipe"
+        *ngIf="selectedRecipe && selectedRecipe.id != ''; else noSelectedRecipe"
+        [selectedRecipe]="selectedRecipe"
       ></app-recipe-detail>
       <ng-template #noSelectedRecipe>
         <span class="text-body-tertiary">Select a recipe</span>
